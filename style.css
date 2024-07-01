@@ -1,11 +1,11 @@
 /* Custom styles */
 :root {
-    --clr-light-yellow: 44.7 100% 59.2%;
-    --clr-dark-yellow: 43.4 100% 49%;
+    --clr-light-yellow: hsl(44.7 100% 59.2%);
+    --clr-dark-yellow: hsl(43.4 100% 49%);
     --clr-red: 0 100% 50%;
-    --clr-baclk-1: 0 0% 1.6%;
-    --clr-black-2: 0 0% 10.2%;
-    --clr-black-3: 0 0% 0%;
+    --clr-black-1: hsl(0 0% 1.6%);
+    --clr-black-2: hsl(0 0% 10.2%);
+    --clr-black-3: hsl(0 0% 0%);
     --clr-white: 0 0% 100%;
   
     /* font-size */
@@ -82,6 +82,8 @@ body{
     background-position: center;
     color: white;
     height: 400px;
+    margin: 20px auto;
+    border-radius: 20px;
   }
   header::before {
     content: "";
@@ -92,13 +94,36 @@ body{
     bottom: 0;
     background: linear-gradient(
         -45deg,
-        rgba(255, 111, 0, 0.8), 
+        hsl(44.7 100% 59.2%), 
         rgba(0, 255, 255, 0.8)
       ); 
     z-index: 1;
+    border-radius: 20px;
+
   }
   
   header > div {
     position: relative;
     z-index: 2;
   }
+
+  .left-column {
+    flex: 3;
+    padding: 25px 50px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .right-column {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+  }
+  
+  .right-column img {
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+  }  
