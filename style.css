@@ -1,0 +1,104 @@
+/* Custom styles */
+:root {
+    --clr-light-yellow: 44.7 100% 59.2%;
+    --clr-dark-yellow: 43.4 100% 49%;
+    --clr-red: 0 100% 50%;
+    --clr-baclk-1: 0 0% 1.6%;
+    --clr-black-2: 0 0% 10.2%;
+    --clr-black-3: 0 0% 0%;
+    --clr-white: 0 0% 100%;
+  
+    /* font-size */
+    --fs-bf-194: 12.3vw;
+    --fs-bf-109: 6.8125rem;
+    --fs-bf-80: 5rem;
+    --fs-bf-65: 4.065rem;
+    --fs-bf-50: 3.125rem;
+    --fs-bf-45: 2.8125rem;
+    --fs-bf-30: 1.875rem;
+    --fs-bf-20: 1.25rem;
+    --fs-bf-16: 1rem;
+    --fs-bf-15: 0.9375rem;
+  
+    /* font family */
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+/* // Removing defualt margin========= */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Removing list style============== */
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4{
+    font-family: var(--font-montserrat);
+}
+
+body{
+    font-family: var(--font-poppins);
+    line-height: 1.5rem;
+}
+
+/* ========Component Utility Class============ */
+
+
+  
+  .flex {
+    display: flex;
+    gap: var(--flex-gap, 1rem);
+  }
+  
+  .container {
+    width: 85vw;
+    margin-inline: auto;
+    padding-inline: 2rem;
+  }
+
+  /* =====Header===== */
+  header{
+    background-color: hsl(var(--clr-dark-yellow));
+    position: relative;
+    background-image: url('https://cdn.pixabay.com/photo/2013/03/19/23/07/easter-bunny-95096_960_720.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 400px;
+  }
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        -45deg,
+        rgba(255, 111, 0, 0.8), 
+        rgba(0, 255, 255, 0.8)
+      ); 
+    z-index: 1;
+  }
+  
+  header > div {
+    position: relative;
+    z-index: 2;
+  }
