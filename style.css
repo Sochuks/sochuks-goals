@@ -2,7 +2,7 @@
 :root {
     --clr-light-yellow: hsl(44.7 100% 59.2%);
     --clr-dark-yellow: hsl(43.4 100% 49%);
-    --clr-red: 0 100% 50%;
+    --clr-red: hsl(0 100% 50%);
     --clr-black-1: hsl(0 0% 1.6%);
     --clr-black-2: hsl(0 0% 10.2%);
     --clr-black-3: hsl(0 0% 0%);
@@ -110,6 +110,21 @@ header > div {
     justify-content: center;
 }
 
+.left-column span{
+    text-transform: uppercase; 
+    color: var(--clr-black-1); 
+    font-size: var(--fs-bf-20); 
+    font-weight: 500; 
+    border-bottom: 1px solid hsl(0 0% 1.6%); 
+    width: 15%; 
+    padding-bottom: 5px;
+}
+
+.left-column h1{
+    font-size: var(--fs-bf-50);
+    line-height: 3rem;
+}
+
 .right-column {
     flex: 2;
     display: flex;
@@ -148,16 +163,48 @@ header > div {
     font-weight: bold;
 }
 
-.box-container {
-    align-items: flex-end;
+.content-text h2{
+    font-size: var(--fs-bf-30);
 }
+
+.content-text span{
+    color: var(--clr-dark-yellow);
+}
+
+.content-text a{
+    font-weight: 700; 
+    margin-bottom: 20px;
+    cursor: pointer;
+    color:blue;
+}
+
+.content-text a:hover{
+    color: var(--clr-red);
+    text-decoration: underline;
+}
+
+.box-container {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.links a{
+    text-decoration:none;
+}
+
+.links a:hover{
+    text-decoration: underline;
+    color:var(--clr-red);
+}
+
+
 
 /* Media Queries */
 
 /* Tablet */
 @media (max-width: 768px) {
     .container {
-        width: 90vw;
+        margin: 10px auto;
     }
 
     header {
@@ -169,59 +216,82 @@ header > div {
         padding: 20px 30px;
     }
 
+    .left-column  h1{
+        font-size: var(--fs-bf-50);
+        line-height: 3rem;
+    }
+
     .right-column img {
-        width: 120px;
+        width: 300px;
         height: auto;
-        bottom: 10px;
     }
 
     .content-box {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        justify-content: center;
         margin: 20px auto;
     }
 
     .content-box::before {
-        font-size: var(--fs-bf-80);
-        top: -0.5rem;
-        right: 2rem;
+        display: none;
+    }
+
+    .content-text p{
+        padding: 5px 40px;
+        font-size: var(--fs-bf-20);
+        line-height: 2rem;
+    }
+
+    .links{
+        justify-content: center;
     }
 
     .box-container {
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
     }
 
     .box-container p {
         font-size: var(--fs-bf-30);
+        line-height: 2rem;
     }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
     .container {
-        width: 95vw;
+        padding: 5px;
     }
 
     header {
-        height: 250px;
+        height: 200px;
         flex-direction: column;
         align-items: center;
         text-align: center;
         justify-content: center;
-        margin-left: 20px!important;
-    }
-
-    span.goals{
-        width: 100% !important ;
-        border-width: 0px !important;
     }
 
     .left-column {
         flex: none;
         padding: 20px 40px;
         line-height: 1.1;
+    }
+
+    
+    .left-column span{
+        width: 100% !important ;
+        border-width: 0px !important;
+        margin-bottom: -10px;
+        font-weight: 700;
+    }
+
+    
+    .left-column h1{
+        font-size: var(--fs-bf-30);
+        line-height: 1.8rem;
     }
 
     .right-column {
@@ -235,15 +305,12 @@ header > div {
         display: none;
     }
 
-    .summary{
-        width: 100%;
-        justify-content: center;
-        margin-left: 25px;
+    .content-box::before{
+        display: none;
     }
 
-    .links{
-        width: 100%;
-        justify-content: center;
+    .image-side img{
+        padding: 5px 10px;
     }
 
     .content-box {
@@ -260,12 +327,18 @@ header > div {
 
     .image-side{
         justify-content: center;
-        margin-right: 40px;
+        
+    }
+
+    .content-text p{
+        padding: 0px 10px;
     }
 
     .box-container {
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: center;
+        margin: 10px auto;
     }
 
     .box-container p {

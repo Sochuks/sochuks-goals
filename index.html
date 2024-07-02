@@ -26,8 +26,8 @@
         <header class="flex">
             <!-- Text -->
             <div class="left-column flex">
-                <span class="goals" style="text-transform: uppercase; color: var(--clr-black-1); font-size: var(--fs-bf-20); font-weight: 500; border-bottom: 1px solid hsl(0 0% 1.6%); width: 15%; padding-bottom: 5px;">my goals</span>
-                <h1 class="" style="font-size: var(--fs-bf-45);">Over the next 2 years</h1>
+                <span >my goals</span>
+                <h1 class="title">Over the next 2 years</h1>
             </div>
             <!-- Image -->
             <div class="right-column">
@@ -37,23 +37,24 @@
         </header>
 
         <!-- Content Box -->
-        <div class="content-box flex container">
+        <div class="content-box flex">
             <!-- image and date -->
             <div class="image-side">
-                <img src="./img/sochuks-profile.jpg" alt="" />
+                <img align-items: center; justify-content: center; align-self: center;" src="./img/sochuks-profile.jpg" alt="" data-testid="slackProfilePicture" />
             </div>
             <!-- text -->
             <div >
-                <div style="display: flex; flex-direction: column; gap: 5px;">
-                    <h2 style="font-size: var(--fs-bf-30);">Moses Chukwuma Kajang</h2>
-                    <span style="color: var(--clr-dark-yellow);">Frontend Developer</span>
-                    <a style="font-weight: 700; margin-bottom: 20px;"><i class="uil uil-envelope"></i> moseschukwumakajang@gmail.com</a>
-                    <p class="summary" style="color: var(--clr-black-2); width: 80%;">The HNG11 internship is playing a pivotal role in sharpening my abilities, providing me with the tools and experiences necessary for a bright future in tech. Today, on [CurrentDay] at [CurrentTime], I am setting my goals for the next two years, focused on mastering advanced technologies, contributing to impactful projects, and continuously learning to stay ahead in the ever-evolving field of web development. </p>
+                <div class="content-text" style="display: flex; flex-direction: column; gap: 5px;">
+                    <h2 data-testid="slackDisplayName">Moses Chukwuma Kajang</h2>
+                    <span>Frontend Developer</span>
+                    <a data-testid="slackEmail"><i class="uil uil-envelope"></i> moseschukwumakajang@gmail.com</a>
+                    <p style="">The HNG11 internship is playing a pivotal role in sharpening my abilities, providing me with the tools and experiences necessary for a bright future in tech. 
+                        Today, on <span data-testid="currentDay" style="font-weight: 700;" data-placeholder="CurrentDay">[CurrentDay]</span> at <span data-testid="currentTimeUTC" style="font-weight: 700;" data-placeholder="CurrentTime">[CurrentTime]</span>, I am setting my goals for the next two years, focused on mastering advanced technologies, contributing to impactful projects, and continuously learning to stay ahead in the ever-evolving field of web development.</p>
                 </div>
                 <div class="links flex">
-                    <a href="">HNG</a>
-                    <a href="">Keyword</a>
-                    <a href="">Scrapeanywebsite</a>
+                    <a href="https://hng.tech/learn" data-testid="hngLink">HNG</a>
+                    <a href="https://keyword.dog" data-testid="keywordLink">Keyword</a>
+                    <a href="https://scrapeanyweb.site" data-testid="scrapeanywebLink">Scrapeanywebsite</a>
 
                 </div>
                 <div class="flex" style="margin-top: 30px;">
@@ -91,5 +92,7 @@
         </div>
 
     </div>
+
+    <script src="./app.js"></script>
 </body>
 </html>
